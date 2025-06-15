@@ -33,40 +33,54 @@ mkdir -p ~/InstagramBot/Videos/your_username/Posted
 3. Configure your accounts:
 - Open `accounts.json`
 - Replace the example credentials with your Instagram account details
-- Choose your preferred browser: "chrome", "firefox", or "edge"
 - Example:
 ```json
 {
     "username": "your_username",
     "password": "your_password",
-    "browser": "chrome",  // or "firefox" or "edge"
     "videos_per_day": 1,
     "min_delay": 45,
-    "max_delay": 300
+    "max_delay": 300,
+    "start_offset": 0,
+    "proxy": null
 }
 ```
 
 4. Prepare your videos:
-- Place your MP4 videos in the `ToUpload` folder
+- Place your videos in the `ToUpload` folder
+- Supported formats: MP4, MOV, AVI
 - Example path: `C:\InstagramBot\Videos\your_username\ToUpload`
 
 5. Run the bot:
 ```bash
-python instabot.py
+python instabot21.py
 ```
+
+## Features
+- Interactive browser selection (Chrome, Firefox, Edge)
+- Option to save browser preference for future use
+- Automatic popup handling
+- Support for multiple video formats
+- Graceful shutdown with Ctrl+C
+- Detailed logging of all operations
+- Automatic cookie handling
+- Stealth mode to avoid detection
+- Multiple account support
 
 ## Important Notes
 - Keep your `accounts.json` file secure
-- Videos must be in MP4 format
+- Videos must be in MP4, MOV, or AVI format
 - The bot will automatically move posted videos to a `Posted` folder
 - Instagram may show CAPTCHA - solve it manually when prompted
 - Be careful with posting frequency to avoid account restrictions
 - To stop the bot, press Ctrl+C - it will shut down gracefully
+- The bot will automatically create required folders if they don't exist
 
 ## Troubleshooting
 If you encounter any issues:
 1. Make sure your chosen browser is installed
 2. Check your internet connection
 3. Verify your Instagram credentials
-4. Ensure videos are in MP4 format
-5. If one browser fails, try another by changing the "browser" setting in accounts.json 
+4. Ensure videos are in supported formats
+5. Check the console output for detailed error messages
+6. If one browser fails, the bot will automatically try Chrome as fallback 
