@@ -1,0 +1,11 @@
+[
+    {
+        "username": "iamkingjethro",
+        "password": "Seun2009*",
+        "videos_per_day": 1,
+        "min_delay": 45,
+        "max_delay": 300,
+        "start_offset": 0,
+        "proxy": null
+    }
+] 
